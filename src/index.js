@@ -57,6 +57,7 @@ myHobby.anime = "新世界より"; //{sports: "capoeira", book: "少年ジャン
 
 /**
  * 関数の宣言、実行(アロー関数の記法)
+ * テンプレート文字列
  */
 const selfIntroduction = function greeting() {
   return `オス、おらの名めぇは${introduction[0]}ってんだ。得意技は${myHobby.sports}だ!`;
@@ -160,7 +161,20 @@ falseFlag || console.log("実行された");
 /**
  * switch文
  */
+const calc = age + age;
 
-/**
- * テンプレート文字列
- */
+switch (calc) {
+  case 69:
+    console.log("間違いです"); //実行されない
+    break;
+  case 70:
+    console.log("正解です"); //ここが実行される
+    break;
+  default:
+    console.log("ここは実行されません");
+    break;
+}
+
+//caseごとに「：」で区切る
+//breakを書き忘れると全てのコードが実行されてしまう
+//fefaultは一致しない場合の処理をかく
