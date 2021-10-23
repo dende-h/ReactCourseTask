@@ -22,6 +22,7 @@ console.log(age); //34
 
 age = 35; //再代入可能
 console.log(age); //35
+
 /**
  * 変数宣言　constの場合、再宣言不可、再代入不可
  */
@@ -37,7 +38,6 @@ console.log(address);
 /**
  * 配列やオブジェクトの場合constでも中身の変更は可能
  */
-
 const introduction = [name, age, address];
 console.log(introduction);
 introduction[0] = "dende"; //[dende,"35","山梨"]
@@ -58,7 +58,6 @@ myHobby.anime = "新世界より"; //{sports: "capoeira", book: "少年ジャン
 /**
  * 関数の宣言、実行(アロー関数の記法)
  */
-
 const selfIntroduction = function greeting() {
   return `オス、おらの名めぇは${introduction[0]}ってんだ。得意技は${myHobby.sports}だ!`;
 };
@@ -77,14 +76,86 @@ console.log(selfIntroduction2());
 /**
  * 四則演算
  */
+let add = 1 + 1; //足し算
+let sub = 4 - 1; //引き算
+const mul = 7 * 1; //かけ算
+const div = 11 / 1; //割り算
+const sur = 13 % 14; //除算の余り
+
+const prime = [add, sub, mul, div, sur];
+console.log(prime);
+
+//1を足す
+console.log(add++); //2
+console.log(add); //3
+console.log(++add); //4
+
+//前に「++」をつけるか、後につけるかで出力結果が変わる。
+//後につけた場合は評価されてからプラスされるので評価順に注意
+//後述の減算についても同様
+
+//1を引く
+console.log(sub--);
+console.log(sub);
+console.log(--sub);
 
 /**
  * 比較演算(==と===、!=と!==の違い)
  */
+const str2 = "2";
+
+//「==」だと数値を文字列であっても同じだと評価される
+if (add == str2) {
+  console.log("trueです");
+}
+
+//「===」だと数値と文字列は違うものと区別される
+if (add === str2) {
+  console.log("trueです");
+} else {
+  console.log("trueではありません");
+}
+
+//「!=」だと数値を文字列であっても同じだと評価される
+if (add != str2) {
+  console.log("trueです");
+} else {
+  console.log("trueではありません");
+}
+
+//「!==」だと数値と文字列は違うものと区別される
+if (add !== str2) {
+  console.log("falseです");
+} else {
+  console.log("falseではありません");
+}
+//「!」は論理演算子として評価の結果を反転する意味を持つ
+//大小比較は「＞」「＞＝」「＜」「＜＝」を使い評価する
 
 /**
  * 論理演算(&& || ! ? :)
  */
+
+const trueFlag = true;
+const falseFlag = false;
+
+if (trueFlag && falseFlag) {
+  console.log("じっこうされない");
+} else {
+  console.log("実行される"); //こちらが出力される
+}
+
+//「&&」は左側がtrueの場合右側を評価する
+trueFlag && console.log("実行される");
+
+if (trueFlag || falseFlag) {
+  console.log("じっこうされない?"); //こちらが出力される
+} else {
+  console.log("実行される?");
+}
+
+//「||」は左側がfalseの場合右側を評価する
+falseFlag || console.log("実行された");
 
 /**
  * switch文
